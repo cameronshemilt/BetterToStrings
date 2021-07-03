@@ -42,7 +42,7 @@ The function `toString(abbreviation: AbbreviationStyle, maxSize: Int?, maxFracti
 
 | **Parameter**       | **Type**            | **Default Value** | **Description**                                              |
 | ------------------- | ------------------- | ----------------- | ------------------------------------------------------------ |
-| `abbreviation`      | `AbbreviationStyle` | `.none`           | The abbreviation style. More information [here](abbreviation-styles). |
+| `abbreviation`      | `AbbreviationStyle` | `.none`           | The abbreviation style. More information can be found further below. |
 | `maxSize`           | `Int?`              | `nil`             | The maximum count of characters the resulting string may have. This includes *-*, *K*, *M* etc., but excludes the decimal point. |
 | `maxFractionDigits` | `Int?`              | `nil`             | The maximum count of fraction digits the resulting String may have. |
 
