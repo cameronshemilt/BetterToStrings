@@ -1,14 +1,30 @@
 import SwiftUI
 
 public extension Date {
-    func toString(format: String) -> String {
+    func toString(format: String, smartConversion: Bool = false) -> String {
         let df = DateFormatter()
+        
+        if smartConversion {
+            if Calendar.current.isDateInToday(self) {
+                return NSLocalizedString("TODAY", comment: "")
+            } else if Calendar.current.isDateInTomorrow(self) {
+                return NSLocalizedString("TODAY", comment: "")
+            } else if Calendar.current.isDateInYesterday(self) {
+                return NSLocalizedString("TODAY", comment: "")
+            } else if self < Date(timeIntervalSinceNow: -86400*6) ||
+                        Calendar.current.isDate(self, inSameDayAs: Date(timeIntervalSinceNow: -86400*6)) ||
+                        self < Date(timeIntervalSinceNow: -86400*6) ||
+                        Calendar.current.isDate(self, inSameDayAs: Date(timeIntervalSinceNow: 86400*6)) {
+                return df.weekdaySymbols[Calendar.current.component(.weekday, from: self) - 1]
+            }
+        }
+        
         df.dateFormat = format
         return df.string(from: self)
     }
     
-    func toString(_ dateFormat: DateFormat) -> String {
-        return toString(format: dateFormat.rawValue)
+    func toString(_ dateFormat: DateFormat, smartConversion: Bool = false) -> String {
+        return toString(format: dateFormat.rawValue, smartConversion: smartConversion)
     }
 }
 

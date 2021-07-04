@@ -33,6 +33,11 @@ This Package also offers some Date Format presets. You can use them via the `Dat
 | `.meridiemTime`     | `"hh:mm:ss a"`            | 00:00:00 AM                 |
 | `.timeZone`         | `"Z (zzzz)"`              | +0000 (Greenwich Mean Time) |
 
+#### Smart Conversion
+
+All `toString()` methods for Date have a paramterer called `smartConbersion: Bool`. This is set to `false` by default.
+
+Smart conversion automatically returns `"Today"`, `"Yesterday"` and `"Tomorrow"` if applicable. Should the Date be within one week of the current Date, the weekday will be returned (eg. `"Monday"`, `"Tuesday"` etc.) .
 
 ### Numbers
 
