@@ -53,7 +53,7 @@ public extension Double {
     }
 }
 
-extension Float {
+public extension Float {
     func toString(abbreviation: AbbreviationStyle = .none,
                   maxSize: Int? = nil,
                   maxFractionDigits: Int? = nil) -> String {
@@ -63,7 +63,7 @@ extension Float {
     }
 }
 
-extension Int {
+public extension Int {
     func toString(abbreviation: AbbreviationStyle = .none,
                   maxSize: Int? = nil,
                   maxFractionDigits: Int? = nil) -> String {
