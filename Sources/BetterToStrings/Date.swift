@@ -11,9 +11,9 @@ public extension Date {
                 return NSLocalizedString("TODAY", comment: "")
             } else if Calendar.current.isDateInYesterday(self) {
                 return NSLocalizedString("TODAY", comment: "")
-            } else if self < Date(timeIntervalSinceNow: -86400*6) ||
+            } else if (self > Date(timeIntervalSinceNow: -86400*6) &&
+                        self < Date(timeIntervalSinceNow: 86400*6)) ||
                         Calendar.current.isDate(self, inSameDayAs: Date(timeIntervalSinceNow: -86400*6)) ||
-                        self < Date(timeIntervalSinceNow: -86400*6) ||
                         Calendar.current.isDate(self, inSameDayAs: Date(timeIntervalSinceNow: 86400*6)) {
                 return df.weekdaySymbols[Calendar.current.component(.weekday, from: self) - 1]
             }
