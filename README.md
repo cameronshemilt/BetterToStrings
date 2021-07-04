@@ -35,7 +35,7 @@ This Package also offers some Date Format presets. You can use them via the `Dat
 
 #### Smart Conversion
 
-All `toString()` methods for Date have a paramterer called `smartConbersion: Bool`. This is set to `false` by default.
+All `toString()` methods for Date have a paramterer  `smartConbersion: Bool`. This is set to `false` by default.
 
 Smart conversion automatically returns `"Today"`, `"Yesterday"` and `"Tomorrow"` if applicable. Should the Date be within one week of the current Date, the weekday will be returned (eg. `"Monday"`, `"Tuesday"` etc.) .
 
@@ -50,6 +50,8 @@ The function `toString(abbreviation: AbbreviationStyle, maxSize: Int?, maxFracti
 | `abbreviation`      | `AbbreviationStyle` | `.none`           | The abbreviation style. More information can be found further below. |
 | `maxSize`           | `Int?`              | `nil`             | The maximum count of characters the resulting string may have. This includes *-*, *K*, *M* etc., but excludes the decimal point. |
 | `maxFractionDigits` | `Int?`              | `nil`             | The maximum count of fraction digits the resulting String may have. |
+
+When `maxSize` or `maxFractionDigits` are set to `nil`, the size/number of fraction digits will be infinite.
 
 #### Abbreviation Styles
 
