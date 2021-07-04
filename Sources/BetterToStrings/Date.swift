@@ -6,11 +6,11 @@ public extension Date {
         
         if smartConversion {
             if Calendar.current.isDateInToday(self) {
-                return NSLocalizedString("TODAY", comment: "")
+                return NSLocalizedString("Today", comment: "")
             } else if Calendar.current.isDateInTomorrow(self) {
-                return NSLocalizedString("TODAY", comment: "")
+                return NSLocalizedString("Tomorrow", comment: "")
             } else if Calendar.current.isDateInYesterday(self) {
-                return NSLocalizedString("TODAY", comment: "")
+                return NSLocalizedString("Yesterday", comment: "")
             } else if (self > Date(timeIntervalSinceNow: -86400*6) &&
                         self < Date(timeIntervalSinceNow: 86400*6)) ||
                         Calendar.current.isDate(self, inSameDayAs: Date(timeIntervalSinceNow: -86400*6)) ||
