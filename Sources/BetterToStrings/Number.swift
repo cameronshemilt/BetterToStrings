@@ -30,11 +30,11 @@ public extension Double {
         
         if let maxSize = maxSize {
             let size = number.numOfIntegerDigits(includeNegativeIndicator: true) + magnitude.symbol.count
-            if size > maxSize {
+            if size >= maxSize {
                 formatter.maximumFractionDigits = 0
                 formatter.maximumIntegerDigits = maxSize
             } else {
-                formatter.maximumFractionDigits = maxFractionDigits ?? (maxSize - size)
+                formatter.maximumFractionDigits = min(maxFractionDigits ?? (maxSize - size), (maxSize - size))
             }
         }
         return (formatter.string(for: number) ?? "error").appending(magnitude.symbol)
