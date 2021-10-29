@@ -35,7 +35,7 @@ This Package also offers some Date Format presets. You can use them via the `Dat
 
 #### Smart Conversion
 
-All `toString()` methods for Date have a paramterer  `smartConbersion: Bool`. This is set to `false` by default.
+All `toString()` methods for Date have a paramterer  `smartConversion: Bool`. This is set to `false` by default.
 
 Smart conversion automatically returns `"Today"`, `"Yesterday"` and `"Tomorrow"` if applicable. Should the Date be within one week of the current Date, the weekday will be returned (eg. `"Monday"`, `"Tuesday"` etc.) .
 
@@ -58,7 +58,7 @@ When `maxSize` or `maxFractionDigits` are set to `nil`, the size/number of fract
 | **Case**       | **Symbol** | **Description**                                              |
 | -------------- | ---------- | ------------------------------------------------------------ |
 | `.none`        | none       | Does not alter the number.                                   |
-| `.thousand`    | K          | Displays the number in thousands and appends a *K*.          |
-| `.million`     | M          | Displays the number in millions and appends a *M*.           |
-| `.intelligent` | Depending  | Automatically switches the abbreviation style, depending on the size of the number. |
+| `.thousand`    | *K*        | Displays the number in thousands and appends a *K*.          |
+| `.million`     | *M*        | Displays the number in millions and appends a *M*.           |
+| `.intelligent` | Dynamic    | Automatically switches the abbreviation style, depending on the size of the number. |
 
