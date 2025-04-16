@@ -16,6 +16,8 @@ public extension Double {
                 if abs(number) >= 1000000 {
                     number = number/1000000
                     magnitude = .million
+                } else if abs(number) >= 1000 && abs(number) < 10000 && (maxSize ?? 10) > 3 {
+                    magnitude = .none
                 } else if abs(number) >= 1000 {
                     number = number/1000
                     magnitude = .thousand
